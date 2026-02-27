@@ -142,6 +142,7 @@ npx supabase db push
 ## Notes
 
 - The SDK package is configured for public npm publishing (`publishConfig.access = public`).
+- The SDK package is browser-only (ESM + Fetch API).
 - `publish-sdk.yml` has been intentionally removed to avoid dual publish paths.
 
 ## License

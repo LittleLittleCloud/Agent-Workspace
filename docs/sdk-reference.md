@@ -6,6 +6,28 @@
 npm install @agent-workspace/sdk
 ```
 
+## Runtime
+
+- Browser-only SDK (ESM + Fetch API)
+- Use in client-side apps (React, Next.js client components, Vite, etc.)
+- Do not use `require(...)`; use ESM imports
+
+## Frontend Example
+
+```typescript
+import { WorkspaceClient } from '@agent-workspace/sdk'
+
+const client = new WorkspaceClient({
+  apiKey: import.meta.env.VITE_AGENT_WORKSPACE_API_KEY,
+  baseUrl: 'https://api.agentworkspace.dev/v1',
+})
+
+const page = await client.workspaces.list({ page: 1, pageSize: 10 })
+console.log(page.data)
+```
+
+> Security note: browser apps expose client-side environment variables. Use a scoped/ephemeral token flow from your backend when possible.
+
 ## Quick Start
 
 ```typescript

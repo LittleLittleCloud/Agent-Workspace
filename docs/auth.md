@@ -22,9 +22,11 @@ aw_sk_Kj3mXp9vL2nQ8wR...
 import { WorkspaceClient } from '@agent-workspace/sdk'
 
 const client = new WorkspaceClient({
-  apiKey: process.env.AGENT_WORKSPACE_API_KEY!,
+  apiKey: import.meta.env.VITE_AGENT_WORKSPACE_API_KEY,
 })
 ```
+
+For production browser apps, prefer issuing short-lived/scoped tokens from your backend instead of embedding long-lived API keys.
 
 Or via HTTP:
 

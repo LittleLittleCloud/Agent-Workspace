@@ -36,17 +36,20 @@ export class HttpClient {
 
     let response: Response
     try {
-      response = await fetch(url.toString(), {
+      const requestInit: RequestInit = {
         method,
         signal: controller.signal,
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'User-Agent': 'agent-workspace-sdk/0.1.0',
         },
-        body: body !== undefined ? JSON.stringify(body) : undefined,
-      })
+      }
+      if (body !== undefined) {
+        requestInit.body = JSON.stringify(body)
+      }
+
+      response = await fetch(url.toString(), requestInit)
     } catch (err: unknown) {
       if (err instanceof Error && err.name === 'AbortError') throw new TimeoutError()
       throw err
@@ -63,15 +66,18 @@ export class HttpClient {
   }
 
   get<T>(path: string, query?: RequestOptions['query']) {
-    return this.request<T>(path, { method: 'GET', query })
+    if (query) return this.request<T>(path, { method: 'GET', query })
+    return this.request<T>(path, { method: 'GET' })
   }
 
   post<T>(path: string, body?: unknown) {
-    return this.request<T>(path, { method: 'POST', body })
+    if (body !== undefined) return this.request<T>(path, { method: 'POST', body })
+    return this.request<T>(path, { method: 'POST' })
   }
 
   patch<T>(path: string, body?: unknown) {
-    return this.request<T>(path, { method: 'PATCH', body })
+    if (body !== undefined) return this.request<T>(path, { method: 'PATCH', body })
+    return this.request<T>(path, { method: 'PATCH' })
   }
 
   delete<T = void>(path: string) {

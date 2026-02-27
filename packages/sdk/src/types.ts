@@ -78,7 +78,7 @@ export interface FileEntry {
 }
 
 export interface ReadFileOptions {
-  encoding?: BufferEncoding
+  encoding?: string
 }
 
 export interface WriteFileOptions {

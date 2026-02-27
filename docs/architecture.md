@@ -40,7 +40,7 @@ Developer / AI Agent          Team Admin / Developer
 
 | Package | Purpose | Runtime |
 |---------|---------|---------|
-| `packages/sdk` | TypeScript SDK for API consumers | Node.js 18+ |
+| `packages/sdk` | TypeScript SDK for API consumers | Browser (ESM + Fetch API) |
 | `packages/api` | Backend API server (Hono) | Fly.io |
 | `packages/agent` | In-VM HTTP server | Fly Machine |
 | `packages/dashboard` | Management UI (Next.js) | Vercel / Fly.io |
