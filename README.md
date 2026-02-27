@@ -1,5 +1,15 @@
 # Agent Workspace
 
+[![CI](https://github.com/AWorkspaceDev/Agent-Workspace/actions/workflows/ci.yml/badge.svg)](https://github.com/AWorkspaceDev/Agent-Workspace/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/@agent-workspace/sdk)](https://www.npmjs.com/package/@agent-workspace/sdk)
+[![npm downloads](https://img.shields.io/npm/dm/@agent-workspace/sdk)](https://www.npmjs.com/package/@agent-workspace/sdk)
+
+## Packages
+
+| Package | npm |
+| --- | --- |
+| [`@agent-workspace/sdk`](packages/sdk) | [![npm](https://img.shields.io/npm/v/@agent-workspace/sdk)](https://www.npmjs.com/package/@agent-workspace/sdk) |
+
 Agent Workspace is a monorepo for a sandboxed developer environment platform built around a compute-storage separation model:
 
 - **SDK** (`@agent-workspace/sdk`) for programmatic usage
