@@ -6,8 +6,9 @@ import { Hono } from 'hono'
 import { z } from 'zod'
 import * as fly from '../services/fly'
 import * as registry from '../services/registry'
+import type { AppVariables } from '../types'
 
-const vms = new Hono()
+const vms = new Hono<{ Variables: AppVariables }>()
 
 // ── Attach a workspace to a VM ─────────────────────────────────────────────
 

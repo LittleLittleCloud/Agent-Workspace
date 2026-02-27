@@ -79,6 +79,6 @@ async function s3Request(
       'Authorization': `AWS ${S3_ACCESS_KEY_ID}:${S3_SECRET_ACCESS_KEY}`,
       'Content-Type': 'application/octet-stream',
     },
-    body: options.body,
+    body: options.body ?? null,
   })
 }
