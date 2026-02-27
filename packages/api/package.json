@@ -1,6 +1,6 @@
 {
   "name": "@agent-workspace/api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "Agent Workspace API server",
   "scripts": {
@@ -23,5 +23,7 @@
     "vitest": "^1.6.0",
     "@types/node": "^20.12.0"
   },
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }
