@@ -6,8 +6,9 @@ import { Hono } from 'hono'
 import { z } from 'zod'
 import * as registry from '../services/registry'
 import * as storage from '../services/storage'
+import type { AppVariables } from '../types'
 
-const workspaces = new Hono()
+const workspaces = new Hono<{ Variables: AppVariables }>()
 
 // ── List workspaces ────────────────────────────────────────────────────────
 

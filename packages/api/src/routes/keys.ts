@@ -6,8 +6,9 @@ import { Hono } from 'hono'
 import { z } from 'zod'
 import { db, setOrgContext } from '../db/client'
 import { generateApiKey, hashApiKey } from '../services/auth'
+import type { AppVariables } from '../types'
 
-const keys = new Hono()
+const keys = new Hono<{ Variables: AppVariables }>()
 
 // ── List API keys ──────────────────────────────────────────────────────────
 
