@@ -1,6 +1,6 @@
 {
   "name": "@agent-workspace/sdk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "TypeScript SDK for Agent Workspace",
   "type": "module",
   "main": "./dist/index.mjs",
@@ -17,7 +17,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup src/index.ts --format \"esm\" --dts",
     "dev": "tsup src/index.ts --format \"esm\" --dts --watch",
